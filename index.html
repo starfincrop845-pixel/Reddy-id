@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddy Cricket ID - Official</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --red: #ff0000; --green: #25d366; --gold: #f59e0b; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #000000; color: white; margin: 0; padding: 0; text-align: center; overflow-x: hidden; }
+
+        /* 1. Red Sticky Headline */
+        .marquee-top {
+            background: var(--red); color: #fff; font-weight: bold; padding: 12px 0; font-size: 15px; text-transform: uppercase;
+            position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #fff;
+        }
+
+        /* 2. Floating WhatsApp */
+        .wa-float {
+            position: fixed; bottom: 25px; right: 15px; background-color: var(--green); color: white;
+            padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 14px;
+            display: flex; align-items: center; gap: 10px; z-index: 9999; border: 2px solid #fff; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* 3. Header */
+        .main-header { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: #0a0a0a; border-bottom: 1px solid #222; }
+        .main-header img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--red); }
+
+        /* 4. Image Slider - PHOTO FULL DISPLAY FIX */
+        .slider-wrap { 
+            width: 95%; max-width: 500px; height: 280px; 
+            margin: 20px auto; overflow: hidden; border-radius: 15px; border: 2px solid var(--red); background: #000;
+        }
+        .slider-track { display: flex; width: 400%; height: 100%; animation: slide 12s infinite ease-in-out; }
+        .slider-track img { 
+            width: 25%; height: 100%; 
+            object-fit: contain; /* Isse photo poori dikhegi, kategi nahi */
+            background: #000;
+        }
+        @keyframes slide { 0%, 20% {transform: translateX(0);} 25%, 45% {transform: translateX(-25%);} 50%, 70% {transform: translateX(-50%);} 75%, 95% {transform: translateX(-75%);} 100% {transform: translateX(0);} }
+
+        /* 5. Main CTA & Summary */
+        .trust-info { padding: 10px; }
+        .main-cta { background: var(--red); color: white; padding: 18px; text-decoration: none; font-weight: 900; border-radius: 10px; display: block; margin: 15px auto; width: 88%; font-size: 20px; text-transform: uppercase; }
+        .gold-text { color: var(--gold); font-size: 18px; font-weight: bold; margin: 10px 0; }
+        .summary { font-size: 14px; color: #ccc; line-height: 1.8; padding: 0 20px; }
+
+        /* 6. Feature Boxes */
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 20px; }
+        .f-box { background: #111; border: 1px solid #333; padding: 20px 10px; border-radius: 12px; font-weight: bold; font-size: 14px; }
+        .f-box span { color: var(--red); display: block; font-size: 20px; margin-bottom: 5px; }
+        .full-box { grid-column: span 2; border: 1px solid var(--red); background: linear-gradient(90deg, #111, #222); }
+
+        /* 7. Circle IDs */
+        .circle-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; padding: 20px; }
+        .circle { width: 90px; height: 90px; border-radius: 50%; background: #1d4ed8; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+
+        /* 8. OUR FEATURES Card */
+        .features-card {
+            background: #0a0a0a; width: 90%; max-width: 480px; margin: 25px auto;
+            border-radius: 20px; border: 1px solid #333; padding: 20px; text-align: left;
+        }
+        .features-card h3 { color: var(--gold); font-size: 21px; text-align: center; margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 15px; text-transform: uppercase; }
+        .feature-list { list-style: none; padding: 0; margin: 0; }
+        .feature-list li { padding: 10px 0; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; border-bottom: 1px solid #1a1a1a; }
+        .feature-list li i { color: var(--green); margin-top: 4px; }
+
+        /* 9. NEW SECTION (Image + Extended Summary) */
+        .verified-image {
+            width: 80%; max-width: 300px; /* Medium Size */
+            margin: 30px auto 10px auto; display: block; 
+            filter: drop-shadow(0 0 10px rgba(255,0,0,0.3));
+        }
+
+        .extended-summary {
+            font-size: 14px; color: #aaa; line-height: 1.8; text-align: justify;
+            padding: 0 25px; margin-bottom: 30px;
+        }
+        .extended-summary h4 { color: var(--gold); font-size: 17px; margin-bottom: 5px; text-transform: uppercase; text-align: center; }
+
+        /* 10. MINI Legal & Privacy (Bottom) */
+        .bottom-legal { width: 95%; margin: 30px auto 100px auto; border-top: 1px solid #333; padding-top: 20px; }
+        .mini-summary { font-size: 13px; color: #777; cursor: pointer; text-decoration: underline; margin-bottom: 10px; list-style: none; display: block; }
+        .mini-txt { font-size: 12px; color: #555; text-align: left; padding: 12px; background: #080808; border-radius: 8px; margin-bottom: 12px; line-height: 1.6; }
+        .socials a { font-size: 35px; margin: 0 15px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-top">
+        <marquee scrollamount="7">★★ NEW JOINING 5% BONUS ★★ 24/7 UNLIMITED WITHDRAWAL ★★ INDIA'S MOST TRUSTED EXCHANGE ★★ CONTACT: 9817032953 ★★</marquee>
+    </div>
+
+    <a href="https://wa.me/919817032953" class="wa-float">
+        <i class="fab fa-whatsapp" style="font-size: 20px;"></i> ID LENE KE LIYE CLICK KARE
+    </a>
+
+    <div class="main-header">
+        <img src="https://i.ibb.co/G4JLwxfg/file-0000000002d871fab7dd741c66bc07a5.png" alt="Logo">
+        <a href="https://wa.me/919817032953" style="background:var(--green); color:#fff; padding:12px 20px; border-radius:50px; text-decoration:none; font-weight:bold; font-size:13px;">WHATSAPP NOW</a>
+    </div>
+
+    <div class="slider-wrap">
+        <div class="slider-track">
+            <img src="https://i.ibb.co/jkLpbbVr/IMG-20260329-211656.jpg">
+            <img src="https://i.ibb.co/JwYxBC7z/IMG-20260329-212228.jpg">
+            <img src="https://i.ibb.co/B5yrpDBT/IMG-20260329-212116.jpg">
+            <img src="https://i.ibb.co/76qcZ7b/IMG-20260329-211953.jpg">
+        </div>
+    </div>
+
+    <div class="trust-info">
+        <a href="https://wa.me/919817032953" class="main-cta">GET NEW PLAYER ID: 9817032953</a>
+        <div class="gold-text">India's Most Trusted Gaming ID</div>
+        <p class="summary">
+            <strong>100% Safe and Secure Cricket ID.</strong> We provide instant IDs for all major cricket leagues and casino games with the <strong>fastest withdrawal service</strong> in India.
+        </p>
+    </div>
+
+    <div class="feature-grid">
+        <div class="f-box"><span>5% Bonus</span>New Joining</div>
+        <div class="f-box"><span>24x7</span>Online Support</div>
+        <div class="f-box full-box"><span>100% Guarantee</span>Instant Payment & Fastest Service</div>
+    </div>
+
+    <div class="circle-row">
+        <div class="circle">IPL BETTING ID</div>
+        <div class="circle" style="background:#fff; color:#000;">REDDY GAME<br>CRICKET ID</div>
+        <div class="circle">REDDY CASINO ID</div>
+        <div class="circle">ONLINE CRICKET ID</div>
+    </div>
+
+    <div class="features-card">
+        <h3>OUR Features ➡️</h3>
+        <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> Unlimited sports & Casino</li>
+            <li><i class="fas fa-shield-alt"></i> Transparency and Security 100%</li>
+            <li><i class="fas fa-bolt"></i> Get your Cricket ID instantly within 2 min</li>
+            <li><i class="fas fa-gift"></i> 5% welcome bonus on first deposit</li>
+            <li><i class="fas fa-percentage"></i> 10% Loss Commission weekly</li>
+            <li><i class="fas fa-headset"></i> 24/7 dedicated customer support</li>
+            <li><i class="fas fa-lock"></i> Safe and secure transactions</li>
+            <li><i class="fas fa-money-bill-wave"></i> Fastest withdrawal (10-15 minutes)</li>
+        </ul>
+    </div>
+
+    <img src="https://i.ibb.co/CKJ4Yftw/file-00000000e48471fabfab2935edaeaf86.png" alt="Verified Badge" class="verified-image">
+    
+    <div class="extended-summary">
+        <h4>About Reddy Group International</h4>
+        <p>
+            Reddy Cricket ID stands as India's premier online gaming exchange, setting the gold standard for trust, security, and unmatched user experience since 2010. We specialize in providing authentic, verified IDs for all major cricket leagues, football, tennis, and premium casino games. Our platform is renowned for its transparency, offering 100% guaranteed safety for user data and funds. We are committed to responsible gaming and are the original developers of the Reddy Game concept, serving millions of satisfied users across the globe. Join the original, verified experience today.
+        </p>
+    </div>
+
+    <div class="bottom-legal">
+        <div class="socials">
+            <a href="#" style="color:#0088cc;"><i class="fab fa-telegram"></i></a>
+            <a href="#" style="color:#E4405F;"><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <details>
+            <summary class="mini-summary">Legal Compliance (Strictly 18+)</summary>
+            <div class="mini-txt">Participation in online gaming is strictly for individuals aged 18 years or older. It is the user's sole responsibility to ensure compliance with local and state laws. Online gaming involves financial risk; we strongly advocate for responsible play. Reddy Group takes no liability for financial losses.</div>
+        </details>
+        
+        <details>
+            <summary class="mini-summary">Privacy & Data Protection Policy</summary>
+            <div class="mini-txt">Your privacy is our utmost priority. All personal details, phone numbers, and transaction histories are 100% encrypted and stored securely. We enforce a zero-sharing policy with third parties, marketing agencies, or any other entities. Deposits and withdrawals are processed via 100% safe, verified secure servers to protect your financial information.</div>
+        </details>
+        
+        <p style="font-size: 11px; color: #333; margin-top: 20px;">Copyright © 2026 Reddy Group Official. Secure, Verified & Original.</p>
+    </div>
+
+</body>
+</html>
